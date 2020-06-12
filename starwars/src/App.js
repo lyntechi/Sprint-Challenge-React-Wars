@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import Character from "./components/Character";
 
+
 const App = () => {
   const [characters, setCharacters] = useState([]);
 
@@ -19,12 +20,19 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-      {characters.map((item, index) => {
-        return <Character key={index} characterName={item.name} birthYear={item.birth_year}/>;
-      })}
-    </div>
+    <div className="container">
+      <h1 className="Header">REACT WARS</h1>
+ 
+        {characters.map((item, index) => {
+          return (
+            <Character
+              key={index}
+              characterName={item.name}
+              birthYear={item.birth_year}
+            />
+          );
+        })}
+        </div>
   );
 };
 
